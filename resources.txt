@@ -1,0 +1,36 @@
+*** Settings ***
+
+Library		Selenium2Library
+
+
+*** Variables ***
+
+${URL}			https://www.google.fi/
+${BROWSER}		ff
+${SEARCH_TEXT}		test automation
+${SEARCH_TEXT LOCATOR}	lst-ib
+${SUBMIT LOCATOR}	tsf
+
+
+
+*** Keywords ***
+
+Open google.fi
+	Open Browser	${URL}	${BROWSER}
+	Verify google.fi opened
+
+Verify google.fi opened
+	Title Should Be	Google
+
+Enter Search Text
+	[Arguments]	${SEARCH_TEXT}
+	Input Text	${SEARCH_TEXT LOCATOR}	${SEARCH_TEXT}
+	
+Submit Form
+	Click Element	${SUBMIT LOCATOR}
+
+Verify search opened
+	Wait Until Page Contains	Kuvahaku
+	Title Should Be			test automation
+
+
