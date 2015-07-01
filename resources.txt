@@ -31,6 +31,6 @@ Submit Form
 
 Verify search opened
 	Wait Until Page Contains	Kuvahaku
-	Title Should Be			test automation
+	Title Should Be			test automation - Google-haku
 
 
