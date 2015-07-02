@@ -5,11 +5,11 @@ Library		Selenium2Library
 
 *** Variables ***
 
-${URL}			https://www.google.fi/
-${BROWSER}		ff
-${SEARCH_TEXT}		test automation
+${URL}					https://www.google.fi/
+${BROWSER}				ff
+${SEARCH_TEXT}			test automation
 ${SEARCH_TEXT LOCATOR}	lst-ib
-${SUBMIT LOCATOR}	tsf
+${SUBMIT LOCATOR}		tsf
 
 
 
@@ -28,9 +28,9 @@ Enter Search Text
 	
 Submit Form
 	Click Element	${SUBMIT LOCATOR}
+	Verify search opened
 
 Verify search opened
 	Wait Until Page Contains	Kuvahaku
-	Title Should Be			test automation - Google-haku
 
 
