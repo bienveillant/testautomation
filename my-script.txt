@@ -1,8 +1,8 @@
 *** Settings ***
 
-Suite Setup	Open google.fi
-Suite Teardown	Close Browser
-Resource	Resources.txt
+Suite Setup		Open google.fi
+Suite Teardown		Close Browser
+Resource		Resources.txt
 
 
 *** Test Cases ***
@@ -12,5 +12,4 @@ Google search "test automation"
 	[Setup]
 	Enter Search Text	${SEARCH_TEXT}
 	Submit Form
-	Verify search opened
 	[Teardown]
